@@ -11,14 +11,16 @@
     </div>
     <!-- 输入框部分 -->
     <div class="inputs">
-      <myinput :value="userObj.userName"
+      <myinput v-model="userObj.userName"
                class="userName"
                placeholder="请输入用户名"
-               rule="/^1\d{10}$/"
-               msg_err="格式不正确"></myinput>
-      <myinput :value="userObj.userPwd"
+               :rule="/^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/"
+               msg_err="手机号码格式不正确"></myinput>
+      <myinput v-model="userObj.userPwd"
                class="userPwd"
                placeholder="请输入密码"
+               :rule='/\S{8,20}$/'
+               msg_err='密码格式不正确'
                type="password"></myinput>
     </div>
     <!-- 注册提示 -->
@@ -42,8 +44,8 @@ export default {
   data () {
     return {
       userObj: {
-        userName: '12345678900',
-        userPwd: '123'
+        userName: '13811112222',
+        userPwd: '123123123'
       }
     }
   },
@@ -52,8 +54,11 @@ export default {
   },
   methods: {
     login () {
-
+      console.log(this.userObj)
     }
+    // handleInput (data) {
+    //   this.userObj.userName = data
+    // }
   }
 }
 </script>
