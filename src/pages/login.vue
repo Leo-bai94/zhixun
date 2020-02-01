@@ -20,7 +20,7 @@
                class="userPwd"
                placeholder="请输入密码"
                :rule='/\S{8,20}$/'
-               msg_err='密码格式不正确'
+               msg_err='请输入正确长度的密码'
                type="password"></myinput>
     </div>
     <!-- 注册提示 -->

@@ -3,6 +3,11 @@ import App from './App.vue'
 // 引入路由文件
 import router from '@/router/index.js'
 
+// 引入vant-ui组件
+import { Toast } from 'vant'
+// 挂在在vue
+Vue.use(Toast)
+
 Vue.config.productionTip = false
 
 new Vue({

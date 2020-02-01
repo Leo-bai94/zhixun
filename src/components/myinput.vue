@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// import { Toast } from 'vant'
 export default {
   props: [
     // 从父组件传递过来的数据
@@ -44,7 +45,7 @@ export default {
     handleblur (event) {
       if (this.rule && typeof this.rule === 'object') {
         if (!this.rule.test(event.target.value)) {
-          alert(this.msg_err)
+          this.$toast.fail(this.msg_err)
           this.statue = 'fail'
         }
       }
