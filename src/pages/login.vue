@@ -60,11 +60,14 @@ export default {
         .then(res => {
           console.log(res)
           if (res.data.message === '登录成功') {
-
+            // 登录成功就将用户信息token和用户id存储到本地
+            localStorage.setItem('zhixun_Authorization', res.data.data.token)
+            localStorage.setItem('zhixun_id', res.data.data.user.id)
           }
         })
         .catch(err => {
           console.log(err)
+          this.$toast.fail('服务器异常，请重试')
         })
     }
     // handleInput (data) {

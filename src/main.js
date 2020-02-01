@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+
+// 引入重置样式
+import '@/style/reset.less'
 // 引入路由文件
 import router from '@/router/index.js'
 
