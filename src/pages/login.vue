@@ -11,12 +11,12 @@
     </div>
     <!-- 输入框部分 -->
     <div class="inputs">
-      <myinput v-model="userObj.userName"
+      <myinput v-model="userObj.username"
                class="userName"
                placeholder="请输入用户名"
                :rule="/^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/"
                msg_err="手机号码格式不正确"></myinput>
-      <myinput v-model="userObj.userPwd"
+      <myinput v-model="userObj.password"
                class="userPwd"
                placeholder="请输入密码"
                :rule='/\S{8,20}$/'
@@ -40,12 +40,13 @@
 <script>
 import myinput from '@/components/myinput.vue'
 import mybutton from '@/components/mybutton.vue'
+import { login } from '@/apis/user.js'
 export default {
   data () {
     return {
       userObj: {
-        userName: '13811112222',
-        userPwd: '123123123'
+        username: '123456',
+        password: '123456'
       }
     }
   },
@@ -54,7 +55,17 @@ export default {
   },
   methods: {
     login () {
-      console.log(this.userObj)
+      // console.log(this.userObj)
+      login(this.userObj)
+        .then(res => {
+          console.log(res)
+          if (res.data.message === '登录成功') {
+
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
     // handleInput (data) {
     //   this.userObj.userName = data
