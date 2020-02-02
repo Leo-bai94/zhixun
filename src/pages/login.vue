@@ -58,11 +58,15 @@ export default {
       // console.log(this.userObj)
       login(this.userObj)
         .then(res => {
-          console.log(res)
+          // console.log(res)
           if (res.data.message === '登录成功') {
             // 登录成功就将用户信息token和用户id存储到本地
             localStorage.setItem('zhixun_Authorization', res.data.data.token)
             localStorage.setItem('zhixun_id', res.data.data.user.id)
+            // 登录成功之后跳转到个人中心页面
+            this.$router.push({ path: `personal/${res.data.data.user.id}` })
+          } else {
+            this.$toast.fail(res.data.message)
           }
         })
         .catch(err => {

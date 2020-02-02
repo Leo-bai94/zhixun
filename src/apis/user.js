@@ -18,3 +18,4 @@ export const register = (data) => {
     data
   })
 }
+// 请求个人中心数据

@@ -73,14 +73,14 @@ export default {
         .catch(err => {
           console.log(err)
           // 提示错误
-          this.$toast.fail('服务器错误，请重试')
+          this.$toast.fail('注册失败')
         })
     }
   }
 }
 </script>
 
-<style lang='less'>
+<style lang='less' scoped>
 .container {
   padding: 20px;
   .header {

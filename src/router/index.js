@@ -6,8 +6,10 @@ import VueRouter from 'vue-router'
 // 引入组件
 // 登录组件
 import Login from '@/pages/login.vue'
-// 注册逐渐
+// 注册组件
 import Register from '@/pages/register.vue'
+// 个人中心页面组件
+import PersonCenter from '@/pages/personCenter.vue'
 
 // 使用
 Vue.use(VueRouter)
@@ -26,6 +28,12 @@ var router = new VueRouter({
       name: 'Register',
       path: '/register',
       component: Register
+    },
+    {
+      // 个人中心页面的路由配置
+      name: 'PersonCenter',
+      path: '/personal/:id',
+      component: PersonCenter
     }
   ]
 })
