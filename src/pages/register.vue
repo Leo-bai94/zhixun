@@ -58,8 +58,9 @@ export default {
     myinput, mybutton
   },
   methods: {
-    register () {
-      register(this.userObj)
+    async register () {
+      let result = await register(this.userObj)
+      console.log(result)
         .then(res => {
           console.log(res)
           // 提示注册成功，并直接跳转到登录页面
