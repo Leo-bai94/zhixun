@@ -6,6 +6,8 @@ import VueRouter from 'vue-router'
 // 引入组件
 // 登录组件
 import Login from '@/pages/login.vue'
+// 注册逐渐
+import Register from '@/pages/register.vue'
 
 // 使用
 Vue.use(VueRouter)
@@ -18,6 +20,12 @@ var router = new VueRouter({
       name: 'Login', // 名称
       path: '/login', // 路径
       component: Login // 将组件映射到路由
+    },
+    {
+      // 注册页面的路由配置
+      name: 'Register',
+      path: '/register',
+      component: Register
     }
   ]
 })

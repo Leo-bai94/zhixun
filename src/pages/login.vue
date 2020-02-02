@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #app {
   .container {
     padding: 20px;
@@ -96,12 +96,13 @@ export default {
     }
   }
   .inputs {
-    padding: 10px;
+    padding: 10px 20px;
     input {
       margin-bottom: 10px;
     }
   }
   .tips {
+    padding-right: 10px;
     text-align: right;
     margin-bottom: 20px;
     a {

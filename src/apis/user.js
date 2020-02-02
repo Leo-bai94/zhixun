@@ -10,3 +10,11 @@ export const login = (data) => {
     data
   })
 }
+// 实现注册
+export const register = (data) => {
+  return axios({
+    method: 'post',
+    url: '/register',
+    data
+  })
+}
